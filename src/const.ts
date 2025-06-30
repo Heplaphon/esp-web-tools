@@ -13,6 +13,7 @@ export interface Build {
     | "ESP32-H2"
     | "ESP32-S2"
     | "ESP32-S3"
+    | "ESP32-P4"
     | "ESP8266";
   parts: {
     path: string;
