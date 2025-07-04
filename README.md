@@ -55,12 +55,55 @@ Example manifest:
     },
     {
       "chipFamily": "ESP8266",
-      "parts": [
-        { "path": "esp8266.bin", "offset": 0 }
-      ]
+      "parts": [{ "path": "esp8266.bin", "offset": 0 }]
     }
   ]
 }
+```
+
+## Bin folder
+
+This projects assumes a `bin` folder in the root of the project which should contain the `versions.json` file in it's root with f.ex. seperate folders for each version with corresponding manifest and bin files.
+
+Example versions.json
+
+```json
+[
+  {
+    "group": "dev",
+    "options": [
+      {
+        "value": "beta_0_14_0",
+        "label": "Beta 0.14.0",
+        "manifest": "bin/beta_0_14_0/manifest.json",
+        "current": "false"
+      },
+      {
+        "value": "beta_0_15_1",
+        "label": "Beta 0.15.1",
+        "manifest": "bin/beta_0_15_1/manifest.json",
+        "current": "false"
+      }
+    ]
+  },
+  {
+    "group": "release",
+    "options": [
+      {
+        "value": "1_0_0",
+        "label": "Release 1.0.0",
+        "manifest": "bin/1_0_0/manifest.json",
+        "current": "false"
+      },
+      {
+        "value": "1_1_0",
+        "label": "Release 1.1.0",
+        "manifest": "bin/1_1_0/manifest.json",
+        "current": "true"
+      }
+    ]
+  }
+]
 ```
 
 ## Development
