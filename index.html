@@ -147,30 +147,7 @@
 
   <!-- add new builds here -->
   <select id="ver" class="btn" onchange="setManifest()">
-    <optgroup label="Beta">
-      <option data-manifest="bin/beta_0_14_0-b4/manifest.json"
-        data-ethernet="bin/beta_0_14_0-b4/manifest_e.json"
-        >0.14.0-b4</option>
-      <option data-manifest="bin-v2/beta_0_14_0-b3/manifest.json"
-        data-ethernet="bin-v2/beta_0_14_0-b3/manifest_e.json"
-        >0.14.0-b3</option>
-      <option data-manifest="bin-v2/beta_0_14_0-b1/manifest.json"
-        data-ethernet="bin-v2/beta_0_14_0-b1/manifest_e.json"
-        >0.14.0-b1</option>
-    </optgroup>
-    <optgroup label="Release">
-      <option data-manifest="bin-v2/release_0_13_3/manifest.json"
-        data-ethernet="bin-v2/release_0_13_3/manifest_e.json"
-        >0.13.3</option>
-      <option data-manifest="bin-v2/release_0_13_1/manifest.json"
-        data-ethernet="bin-v2/release_0_13_1/manifest_e.json"
-        >0.13.1</option>
-    </optgroup>
-    <optgroup label="Sound Reactive">
-      <option data-manifest="bin-v2/sr_0_13_4/manifest.json"
-        data-ethernet="bin-v2/sr_0_13_4/manifest_e.json"
-        >0.13.4</option>
-    </optgroup>
+    <option disabled selected>Loading versions…</option>
   </select><br><br>
 </div>
 
@@ -185,7 +162,9 @@
 
     try {
       // 1. Fetch the static JSON file
-      const resp = await fetch('bin/versions.json');
+      const resp = await fetch('bin/versions.json', {
+        cache: 'no-store'
+      });
       if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
       const groups = await resp.json();
 
