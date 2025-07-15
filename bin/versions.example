@@ -1,0 +1,14 @@
+[
+  {
+    "group": "Dev",
+    "options": [
+      { "value": "elf-test", "label": "ELF test", "manifest": "bin/elf-test/manifest.json", "current": "false" }
+    ]
+  },
+  {
+    "group": "Release",
+    "options": [
+      { "value": "placeholder", "label": "Placeholder", "manifest": "bin/placeholder/manifest.json", "current": "false" }
+    ]
+  }
+]
