@@ -25,5 +25,5 @@ jobs:
 
           - name: 'Build Inventory Image'
             run: |
-              docker build . --tag ghcr.io/heplaphon/why-web-programmer:latest
+              docker build -f Containerfile . --tag ghcr.io/heplaphon/why-web-programmer:latest
               docker push ghcr.io/heplaphon/why-web-programmer:latest
