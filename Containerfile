@@ -1,4 +1,5 @@
 FROM node:20-alpine as node
+LABEL org.opencontainers.image.source="https://github.com/Heplaphon/esp-web-tools"
 WORKDIR /app
 COPY . .
 RUN npm install
